@@ -1,0 +1,115 @@
+<html>
+<link rel="stylesheet" href="style2.css" />
+
+<title>Sandy's Spa & Studio</title>
+<head>
+<script type="text/javascript">
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "4.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "5.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "6.jpg"
+</script>
+
+
+				<div class="body">
+<p>Sandy Spa & Studio</p>
+
+</div>
+	<div class="menu">	
+	
+				<ul>
+				<li><a href="Contact Us.html">Contact Us</a></li>
+				<li><a href="About.html">About</a></li>
+				<li><a href="Slideshow.html">Home</a></li>
+				</ul>
+				</div>
+<br>
+<br>
+
+        <div class="slide">
+				<img class="bg" src="images/4.jpg" id="slide"/>
+				</div>
+				
+
+<body>
+<div class="h">
+<h1><strong>
+A Little bit About Us<h1>
+</div>
+</strong>
+<div class="description">
+
+    <p>Sandy's Spa & Studio is run by Sandy who has been working in the industry
+	<br>
+	<br>
+	
+	for 9 plus years. She has a diploma in asthetics and hair styling and a diploma 
+	<br>
+	<br>
+	from the Candian Asthetic Academy. About 2 years ago, after working at several 
+	
+	<br>
+	<br>
+	
+	salons, such as, Supercuts, she opened her own buisness in Brampton.   
+	<br>
+	<br>
+	She has established her buisness in Brampton's Salon and Spa industry.
+	</p>
+	</div>	
+	
+	
+	<div class="des2">
+	<p>
+	Sandy's Spa & Studio provides an assortment of services for women and children  
+	<br>
+	<br>
+	including, haircuts, wax treatments, massages etc. Sandy's Spa is a place which
+	<br>
+	<br>
+	
+	provides quality services, with a friendly and relaxed atmosphere. Purses, jwelerry
+	<br>
+	<br>
+	and cosmetics are also sold from a variety of brands ibnclusing Mac, Guess etc.
+	<br>
+	<br>
+	</div>
+	
+	
+	
+	
+	
+	
+
+	
+				<script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<2)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 3.5 seconds
+ setTimeout("slideit()",3500)
+}
+
+slideit()
+
+
+</script>
+
+				</body>
+				</html>
+
+				

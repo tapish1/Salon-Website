@@ -1,0 +1,154 @@
+
+html>
+<link rel="stylesheet" href="style2.css" />
+
+<title>Sandy's Spa & Studio</title>
+<head>
+<script type="text/javascript">
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "4.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "5.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "6.jpg"
+
+function validator(){
+	var text=document.getElementById("mail").value; //validation for email
+	var count=0;
+	var repitition=true;
+	var at=text.indexOf("@");
+	var dot=text.lastIndexOf(".");
+	var text_name=document.getElementById("name").value; //validation for name
+
+	for(i=0; i<text.length; i++){
+         if(text.charAt(i)=="@"){
+			 count++
+		 }
+		 if(count>=2){
+			 repitition=false;
+		 }
+	}
+	if(at==-1 || repitition=== false || dot==-1 || dot < at + 2 || dot>text.length ){
+        alert("Invalid email entered");
+        return false;
+    } else if (text_name == ""){
+        alert("Please enter your name");
+        return false;
+    } else if (document.getElementById("field").value== '' ){
+                alert("Please enter some feedback");
+                return false;
+    }else{
+         return true
+        }
+
+
+}
+
+</script>
+</head>
+
+	<div class="body">
+<p>Sandy Spa & Studio</p>
+
+</div>
+	<div class="menu">	
+	
+				<ul>
+				<li><a href="Contact Us.html">Contact Us</a></li>
+				<li><a href="About.html">About</a></li>
+				<li><a href="Slideshow.html">Home</a></li>
+				</ul>
+				</div>
+<br>
+<br>
+<div class="slide">
+				<img class="bg" src="images/4.jpg" id="slide"/>
+				</div>
+				
+
+<div class="h6">
+<h1>
+<strong>
+Get In Touch
+<h1>
+</div>
+</strong>
+<div class="info">
+<h2>Phone Number:</h2> <p>647-850-0470 </p>
+
+
+<h2> Adress: </h2> <p>39 Wildsky Road<br>
+Brampton, L6Y5P9</p>
+
+
+</div>
+<div class="location">
+<a href="https://www.google.ca/maps/place/39+Wildsky+Rd,+Brampton,+ON+L6Y+5P6/@43.6422628,-79.7417685,18z/data=!4m5!3m4!1s0x882b1557c56f8dbf:0xfdfa86a35973f49b!8m2!3d43.6424373!4d-79.7408135">
+View Full Map 
+</a>
+<br>
+<br>
+<img src="location.jpg">
+
+</div>
+<body>
+
+
+<div class="form">
+<p class="name">
+<div class="contact">
+<h1>Contact Form</h1>
+</div>
+<form name="contact_form" class="form" onsubmit="return validator()" action="form.php" method="post">
+
+	<label for="name">Name:</label>
+	<input type="text" name="name" id="name" placeholder="John Doe"/>
+	
+	</p>
+	
+<p class="name">
+
+	<label for="mail">Email:</label>
+	<input type="text" name="email" id="mail" placeholder="mail@example.com"/>
+	
+	</p>
+	
+<p class="text">
+<textarea name="text" id="field" placeholder="Questions/Feedback"></textarea>
+</p>
+
+<p class="submit">
+		<input type="submit" value="Send" />
+
+</p>
+</form>
+</div>
+		<script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<2)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 3.5 seconds
+ setTimeout("slideit()",3500)
+}
+
+slideit()
+
+
+
+
+
+</script>
+</body>
+</html>
+
